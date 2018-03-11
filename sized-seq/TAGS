@@ -4,43 +4,43 @@ main main1,2
 
 ./src/Data/Sequential/Sized.hs,986
 module Data.Sequential.SizedData.Sequential.Sized4,5
-import import17,18
-newtype Sized Sized23,24
-newtype Sized (n :: Nat) a = Sized Sized23,24
-newtype Sized (n :: Nat) a = Sized { runSized runSized23,24
-type n n27,28
-type n < <27,28
+import import18,19
+newtype Sized Sized24,25
+newtype Sized (n :: Nat) a = Sized Sized24,25
+newtype Sized (n :: Nat) a = Sized { runSized runSized24,25
 type n n28,29
-type n > >28,29
-append append30,31
+type n < <28,29
+type n n29,30
+type n > >29,30
 append append31,32
-head head33,34
+append append32,33
 head head34,35
-tail tail36,37
+head head35,36
 tail tail37,38
-(<|)<|39,40
-(<(40,41
-empty empty42,43
+tail tail38,39
+(<|)<|40,41
+(<(41,42
 empty empty43,44
-singleton singleton45,46
+empty empty44,45
 singleton singleton46,47
-data Ordinal Ordinal48,49
-data Ordinal (n n48,49
-  OLt OLt49,50
-data Ordinal (n n48,49
-data SomeSized SomeSized51,52
-  SomeSized SomeSized52,53
-index index54,55
-index index55,56
-find find57,58
-find find58,59
-unsafeWithSize unsafeWithSize60,61
-unsafeWithSize unsafeWithSize61,62
-fromSeq fromSeq63,64
-fromSeq fromSeq64,65
-fromList fromList68,69
-fromList fromList69,70
-reverse reverse71,72
-reverse reverse72,73
-sort sort74,75
-sort sort75,76
+singleton singleton47,48
+data Ordinal Ordinal49,50
+data Ordinal (n n49,50
+  OLt OLt50,51
+data Ordinal (n n49,50
+data SomeSized SomeSized52,53
+  SomeSized SomeSized53,54
+index index57,58
+index index58,59
+find find60,61
+find find61,62
+unsafeWithSize unsafeWithSize63,64
+unsafeWithSize unsafeWithSize64,65
+fromSeq fromSeq66,67
+fromSeq fromSeq67,68
+fromList fromList71,72
+fromList fromList72,73
+reverse reverse74,75
+reverse reverse75,76
+sort sort77,78
+sort sort78,79

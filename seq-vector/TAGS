@@ -2,10 +2,9 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Data/Sequential/Vector.hs,929
+./src/Data/Sequential/Vector.hs,909
 module Data.Sequential.VectorData.Sequential.Vector1,2
 type Seq Seq57,58
-type Seq a a57,58
 type Index Index58,59
 sort sort60,61
 sort sort61,62

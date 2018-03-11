@@ -2,10 +2,9 @@
 ./Setup.hs,15
 main main1,2
 
-./src/Data/Sequential/List.hs,751
+./src/Data/Sequential/List.hs,3297
 module Data.Sequential.ListData.Sequential.List1,2
 type Seq Seq52,53
-type Seq a a52,53
 type Index Index53,54
 empty empty55,56
 empty empty56,57
@@ -33,3 +32,105 @@ mapWithIndex mapWithIndex89,90
 mapWithIndex mapWithIndex90,91
 compareLength compareLength92,93
 compareLength compareLength93,94
+length length95,96
+length length96,97
+zipWith zipWith98,99
+zipWith zipWith99,100
+zip zip101,102
+zip zip102,103
+concat concat104,105
+concat concat105,106
+tail, init init107,108
+tail,tail107,108
+init init108,109
+tail tail109,110
+head, last last111,112
+head,head111,112
+head head112,113
+last last113,114
+foldr foldr115,116
+foldr foldr116,117
+foldl foldl118,119
+foldl foldl119,120
+sort sort121,122
+sort sort122,123
+unzip unzip124,125
+unzip unzip125,126
+findIndices findIndices127,128
+findIndices findIndices128,129
+findIndex findIndex130,131
+findIndex findIndex131,132
+elemIndices elemIndices133,134
+elemIndices elemIndices134,135
+elemIndex elemIndex136,137
+elemIndex elemIndex137,138
+partition, span, break break139,140
+partition, span,span139,140
+partition,partition139,140
+partition partition140,141
+span span141,142
+break break142,143
+filter filter144,145
+filter filter145,146
+find find147,148
+find find148,149
+elem, notElem notElem150,151
+elem,elem150,151
+notElem notElem151,152
+elem elem152,153
+stripPrefix stripPrefix154,155
+stripPrefix stripPrefix155,156
+isPrefixOf, isInfixOf, isSuffixOf isSuffixOf157,158
+isPrefixOf, isInfixOf,isInfixOf157,158
+isPrefixOf,isPrefixOf157,158
+isPrefixOf isPrefixOf158,159
+isSuffixOf isSuffixOf159,160
+isInfixOf isInfixOf160,161
+nub nub162,163
+nub nub163,164
+delete delete165,166
+delete delete166,167
+inits, tails tails168,169
+inits,inits168,169
+inits inits169,170
+tails tails170,171
+groupBy groupBy172,173
+groupBy groupBy173,174
+group group175,176
+group group176,177
+dropWhile, takeWhile takeWhile179,180
+dropWhile,dropWhile179,180
+dropWhile dropWhile180,181
+takeWhile takeWhile181,182
+splitAt splitAt183,184
+splitAt splitAt184,185
+drop, take take186,187
+drop,drop186,187
+drop drop187,188
+take take188,189
+unfoldr unfoldr190,191
+unfoldr unfoldr191,192
+replicate replicate193,194
+replicate replicate194,195
+maximum, minimum minimum196,197
+maximum,maximum196,197
+maximum maximum197,198
+minimum minimum198,199
+all, any any200,201
+all,all200,201
+all all201,202
+any any202,203
+concatMap concatMap204,205
+concatMap concatMap205,206
+transpose transpose207,208
+transpose transpose208,209
+uncons uncons210,211
+uncons uncons211,212
+null null213,214
+null null214,215
+reverse reverse216,217
+reverse reverse217,218
+intersperse intersperse219,220
+intersperse intersperse220,221
+intercalate intercalate222,223
+intercalate intercalate223,224

@@ -1,9 +1,10 @@
 {-# LANGUAGE ConstraintKinds, DataKinds, DeriveFoldable, DeriveTraversable #-}
 {-# LANGUAGE ExplicitNamespaces, FlexibleContexts, GADTs                   #-}
-{-# LANGUAGE GeneralizedNewtypeDeriving, NoImplicitPrelude, TypeInType     #-}
-{-# LANGUAGE TypeOperators                                                 #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving, NoImplicitPrelude                 #-}
+{-# LANGUAGE StandaloneDeriving, TypeInType, TypeOperators                 #-}
 module Data.Sequential.Sized
        ( Sized, append, head, tail, empty, (<|)
+       , SomeSized(..)
        , singleton, index, find, fromSeq, fromList, reverse
        , Ordinal(..), type (<), type (>)
        ) where
@@ -51,6 +52,8 @@ data Ordinal (n :: Nat) where
 
 data SomeSized a where
   SomeSized :: KnownNat n => Sized n a -> SomeSized a
+
+deriving instance Show a => Show (SomeSized a)
 
 index :: Sized n a -> Ordinal n -> a
 index (Sized l) (OLt k) = withKnownNat k $ Seq.index l $ fromIntegral $ natVal k

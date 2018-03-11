@@ -61,18 +61,23 @@ signature Data.Sequential
 
 import Prelude (Eq, Ord, Enum, Monoid, Real, Show
                ,Integer, Int, Maybe, Bool, Ordering
-               ,Read, Integral )
+               ,Read, Integral, Num, Functor)
 import Data.Traversable (Traversable)
+import Data.Foldable    (Foldable)
 import Data.Ix (Ix)
 
 data Seq a
 instance Traversable Seq
-instance Monoid      (Seq a)
+instance Functor     Seq
+instance Foldable    Seq
+instance Monoid         (Seq a)
+instance Show a => Show (Seq a)
 
 data Index
 
 instance Ord      Index
 instance Integral Index
+instance Num      Index
 instance Ix       Index
 instance Real     Index
 instance Show     Index

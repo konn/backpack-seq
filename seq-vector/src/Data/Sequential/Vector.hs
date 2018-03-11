@@ -8,7 +8,7 @@ module Data.Sequential.Vector
     empty, singleton, fromList,
 
     -- * Basic interface
-    cons', snoc, append, head, uncons, unsnoc,
+    cons, cons', snoc, append, head, uncons, unsnoc,
     last, tail, init, null, length, compareLength,
 
     -- * Transforming sequences
@@ -55,7 +55,7 @@ import           Prelude                      (Bool, Eq (..), Functor (..), Int,
                                                (.))
 import qualified Prelude                      as P
 
-type Seq a = Vector a
+type Seq = Vector
 type Index = Int
 
 sort :: Ord a => Seq a -> Seq a
