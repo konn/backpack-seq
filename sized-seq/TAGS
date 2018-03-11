@@ -1,0 +1,46 @@
+
+./Setup.hs,15
+main main1,2
+
+./src/Data/Sequential/Sized.hs,986
+module Data.Sequential.SizedData.Sequential.Sized4,5
+import import17,18
+newtype Sized Sized23,24
+newtype Sized (n :: Nat) a = Sized Sized23,24
+newtype Sized (n :: Nat) a = Sized { runSized runSized23,24
+type n n27,28
+type n < <27,28
+type n n28,29
+type n > >28,29
+append append30,31
+append append31,32
+head head33,34
+head head34,35
+tail tail36,37
+tail tail37,38
+(<|)<|39,40
+(<(40,41
+empty empty42,43
+empty empty43,44
+singleton singleton45,46
+singleton singleton46,47
+data Ordinal Ordinal48,49
+data Ordinal (n n48,49
+  OLt OLt49,50
+data Ordinal (n n48,49
+data SomeSized SomeSized51,52
+  SomeSized SomeSized52,53
+index index54,55
+index index55,56
+find find57,58
+find find58,59
+unsafeWithSize unsafeWithSize60,61
+unsafeWithSize unsafeWithSize61,62
+fromSeq fromSeq63,64
+fromSeq fromSeq64,65
+fromList fromList68,69
+fromList fromList69,70
+reverse reverse71,72
+reverse reverse72,73
+sort sort74,75
+sort sort75,76

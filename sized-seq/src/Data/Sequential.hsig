@@ -1,0 +1,32 @@
+signature Data.Sequential where
+data Seq a
+
+instance Functor     Seq
+instance Foldable    Seq
+instance Traversable Seq
+instance           Monoid (Seq a)
+instance Show a => Show (Seq a)
+instance Eq   a => Eq (Seq a)
+instance Ord  a => Ord (Seq a)
+
+data Index
+
+instance Ord      Index
+instance Integral Index
+instance Num      Index
+instance Real     Index
+instance Show     Index
+instance Read     Index
+
+tail :: Seq a -> Seq a
+head :: Seq a -> a
+
+empty :: Seq a
+singleton :: a -> Seq a
+index :: Seq a -> Index -> a
+find :: (a -> Bool) -> Seq a -> Maybe a
+length :: Seq a -> Index
+fromList :: [a] -> Seq a
+reverse :: Seq a -> Seq a
+cons :: a -> Seq a -> Seq a
+sort :: Ord a => Seq a -> Seq a
