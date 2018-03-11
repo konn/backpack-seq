@@ -1,0 +1,39 @@
+
+./Setup.hs,15
+main main1,2
+
+./src/Data/Sequential/Vector.hs,929
+module Data.Sequential.VectorData.Sequential.Vector1,2
+type Seq Seq57,58
+type Seq a a57,58
+type Index Index58,59
+sort sort60,61
+sort sort61,62
+cons' cons'64,65
+cons' cons'65,66
+append append68,69
+append append69,70
+index index72,73
+index index73,74
+elemCount elemCount76,77
+elemCount elemCount77,78
+uncons uncons80,81
+uncons uncons81,82
+unsnoc unsnoc87,88
+unsnoc unsnoc88,89
+mlast mlast94,95
+mlast mlast95,96
+elemIndexEnd elemIndexEnd101,102
+elemIndexEnd elemIndexEnd102,103
+findIndexEnd findIndexEnd105,106
+findIndexEnd findIndexEnd106,107
+breakEnd, spanEnd spanEnd109,110
+breakEnd,breakEnd109,110
+breakEnd breakEnd110,111
+spanEnd spanEnd116,117
+concatReplicate concatReplicate119,120
+concatReplicate concatReplicate120,121
+mapWithIndex mapWithIndex124,125
+mapWithIndex mapWithIndex125,126
+compareLength compareLength127,128
+compareLength compareLength128,129

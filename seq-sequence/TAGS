@@ -1,0 +1,92 @@
+
+./src/Data/Sequential/Sequence.hs,2535
+module Data.Sequential.SequenceData.Sequential.Sequence1,2
+type Index Index66,67
+copy copy68,69
+copy copy69,70
+cons cons71,72
+cons cons72,73
+snoc snoc74,75
+snoc snoc75,76
+append append77,78
+append append78,79
+head head80,81
+head head81,82
+tail tail83,84
+tail tail84,85
+uncons uncons86,87
+uncons uncons87,88
+unsnoc unsnoc90,91
+unsnoc unsnoc91,92
+last last94,95
+last last95,96
+init init97,98
+init init98,99
+compareLength compareLength100,101
+compareLength compareLength101,102
+concat concat103,104
+concat concat104,105
+concatMap concatMap106,107
+concatMap concatMap107,108
+intercalate intercalate109,110
+intercalate intercalate110,111
+findIndices findIndices115,116
+findIndices findIndices116,117
+findIndex findIndex118,119
+findIndex findIndex119,120
+find find121,122
+find find122,123
+findIndexEnd findIndexEnd127,128
+findIndexEnd findIndexEnd128,129
+elemCount elemCount130,131
+elemCount elemCount131,132
+elemIndex, elemIndexEnd elemIndexEnd133,134
+elemIndex,elemIndex133,134
+elemIndex elemIndex134,135
+elemIndexEnd elemIndexEnd135,136
+elemIndices elemIndices137,138
+elemIndices elemIndices138,139
+notElem, elem elem140,141
+notElem,notElem140,141
+elem elem141,142
+notElem notElem143,144
+stripPrefix, stripSuffix stripSuffix145,146
+stripPrefix,stripPrefix145,146
+stripPrefix stripPrefix146,147
+stripSuffix stripSuffix151,152
+isPrefixOf, isSuffixOf isSuffixOf156,157
+isPrefixOf,isPrefixOf156,157
+isPrefixOf isPrefixOf157,158
+isSuffixOf isSuffixOf158,159
+delete delete160,161
+delete delete161,162
+break, breakEnd, span, spanEnd spanEnd166,167
+break, breakEnd, span,span166,167
+break, breakEnd,breakEnd166,167
+break,break166,167
+break break167,168
+breakEnd breakEnd168,169
+span span169,170
+spanEnd spanEnd170,171
+dropWhile, dropWhileEnd, takeWhile, takeWhileEnd takeWhileEnd172,173
+dropWhile, dropWhileEnd, takeWhile,takeWhile172,173
+dropWhile, dropWhileEnd,dropWhileEnd172,173
+dropWhile,dropWhile172,173
+dropWhile dropWhile173,174
+dropWhileEnd dropWhileEnd174,175
+takeWhile takeWhile175,176
+takeWhileEnd takeWhileEnd176,177
+takeEnd takeEnd178,179
+takeEnd takeEnd179,180
+dropEnd dropEnd183,184
+dropEnd dropEnd184,185
+concatReplicate concatReplicate188,189
+concatReplicate concatReplicate189,190
+minimum, maximum maximum191,192
+minimum,minimum191,192
+minimum minimum192,193
+maximum maximum195,196
+any, all all198,199
+any,any198,199
+any any199,200
+all all201,202

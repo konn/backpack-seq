@@ -1,0 +1,35 @@
+
+./Setup.hs,15
+main main1,2
+
+./src/Data/Sequential/List.hs,751
+module Data.Sequential.ListData.Sequential.List1,2
+type Seq Seq52,53
+type Seq a a52,53
+type Index Index53,54
+empty empty55,56
+empty empty56,57
+singleton singleton58,59
+singleton singleton59,60
+elemCount elemCount61,62
+elemCount elemCount62,63
+append append64,65
+append append65,66
+snoc snoc67,68
+snoc snoc68,69
+fromList fromList70,71
+fromList fromList71,72
+cons cons73,74
+cons cons74,75
+unsnoc unsnoc76,77
+unsnoc unsnoc77,78
+copy copy80,81
+copy copy81,82
+index index83,84
+index index84,85
+concatReplicate concatReplicate86,87
+concatReplicate concatReplicate87,88
+mapWithIndex mapWithIndex89,90
+mapWithIndex mapWithIndex90,91
+compareLength compareLength92,93
+compareLength compareLength93,94

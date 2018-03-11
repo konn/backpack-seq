@@ -1,0 +1,223 @@
+-- |
+-- Module      : Data.Sequential
+-- Copyright   : (c) Hiromi ISHII, 2018
+-- License     : BSD3
+-- Maintainer  : konn.jinro@gmail.com
+-- Stability   : unsatable
+-- Portability : non-portable
+--
+-- A signature for sequential types (i.e. generalised foldable/traversable functors)
+-- over 'Index', a la @str-sig@ package.
+
+signature Data.Sequential
+  ( -- * Sequential types
+    Seq,
+    Index,
+
+    -- * Constructor and deconstructor
+    empty, singleton, fromList,
+
+    -- * Basic interface
+    cons, cons', snoc, append, head, uncons, unsnoc,
+    last, tail, init, null, length, compareLength,
+
+    -- * Transforming sequences
+    reverse, intersperse, intercalate, transpose, mapWithIndex,
+
+    -- * Special folds
+    concat, concatMap, any, all, maximum, minimum,
+
+    -- * Unfolds and replicates
+    replicate, concatReplicate, unfoldr, unfoldrN,
+
+    -- * Subsequences
+    take, takeEnd, drop, dropEnd, splitAt, takeWhile, takeWhileEnd,
+    dropWhile, dropWhileEnd, span, spanEnd, break, breakEnd,
+    breakOn, breakOnEnd, group, groupBy, inits, tails,
+    splitOn, splitWhen, chunksOf, delete, nub,
+
+    -- * Predicates
+    isPrefixOf, isSuffixOf, isInfixOf,
+
+    -- * View Patterns
+    stripPrefix, stripSuffix, commonPrefixes,
+
+    -- * Searching
+    elem, notElem, find, filter, partition, breakOnAll,
+
+    -- * Indexing sequences
+    index, elemIndex, elemIndices, elemIndexEnd,
+    elemCount, findIndex, findIndices,
+
+    -- * Zipping and unzipping
+    zip, zipWith, unzip,
+
+    -- * Ordered sequences
+    sort,
+
+    -- * Copying sequences
+    copy
+  ) where
+
+import Prelude (Eq, Ord, Enum, Monoid, Real, Show
+               ,Integer, Int, Maybe, Bool, Ordering
+               ,Read, Integral )
+import Data.Traversable (Traversable)
+import Data.Ix (Ix)
+
+data Seq a
+instance Traversable Seq
+instance Monoid      (Seq a)
+
+data Index
+
+instance Ord      Index
+instance Integral Index
+instance Ix       Index
+instance Real     Index
+instance Show     Index
+instance Read     Index
+
+-- | /O(1)/ The empty 'Seq'.
+empty :: Seq a
+
+-- | /O(1)/ A sequence with the exactly one element.
+singleton :: a -> Seq a
+
+-- | /O(n)/ Convert @[a]@ into a @'Seq' a@.
+fromList :: [a] -> Seq a
+
+-- | /O(1)/ Prepend an element to the sequence.
+cons :: a -> Seq a -> Seq a
+
+-- | /O(n)/ Prepend an element to the sequence, evaluating the last argument strictly.
+cons' :: a -> Seq a -> Seq a
+
+-- | /O(n)/ Append an element to the sequence.
+snoc :: Seq a -> a -> Seq a
+
+-- | /O(n)/ Append two sequences.
+--   Must coincide with @'mappend'@.
+append :: Seq a -> Seq a -> Seq a
+
+-- | /O(1)/ Extract the first element
+head :: Seq a -> a
+
+-- | /O(1)/ Extract the first element and the tail.
+uncons :: Seq a -> Maybe (a, Seq a)
+
+-- | /O(n)/ Extract the last element and the initial segment.
+unsnoc :: Seq a -> Maybe (Seq a, a)
+
+-- | /O(n)/ Extract the last element.
+last :: Seq a -> a
+
+-- | /O(n)/ Extract the tail subsequence.
+tail :: Seq a -> Seq a
+
+-- | /O(n)/ Extract the initial subsequence.
+init :: Seq a -> Seq a
+
+-- | /O(1)/ Checks if the sequence is empty.
+null :: Seq a -> Bool
+
+-- | /O(n)/ Return the length of a @'Seq' a@ as @'Index'@.
+length :: Seq a -> Index
+
+-- | /O(n)/ Compare the count of elements in a @'Seq' a@ to a number.
+-- This function gives the same answer as comparing against the result
+-- of @'length'@, but can short circuit if the count of characters is
+-- greater than the number, and hence be more efficient.
+compareLength :: Seq a -> Index -> Ordering
+
+-- | /O(n)/ Returns the reverse of a @'Seq' a@.
+reverse :: Seq a -> Seq a
+
+-- | /O(n)/ Takes an @a@ and a @'Seq' a@, and intersperses that element
+-- between the elements of @'Seq' a@.
+intersperse :: a -> Seq a -> Seq a
+
+-- | /O(n)/ Takes a @'Seq'@ and a list of @'Seq'@s, and concatenates the
+-- list after interspersing the first argument between each @'Seq'@
+-- in the list.
+intercalate :: Seq a -> [Seq a] -> Seq a
+
+-- | /O(n*m)/ Transposes the rows and columns.
+transpose :: Seq (Seq a) -> Seq (Seq a)
+
+-- | /O(n)/ Maps the sequence with its @'Index'@.
+mapWithIndex :: (Index -> a -> b) -> Seq a -> Seq b
+
+concat :: [Seq a] -> Seq a
+concatMap :: (a -> Seq b) -> Seq a -> Seq b
+any :: (a -> Bool) -> Seq a -> Bool
+all :: (a -> Bool) -> Seq a -> Bool
+maximum :: Ord a => Seq a -> a
+minimum :: Ord a => Seq a -> a
+
+replicate :: Index -> a -> Seq a
+concatReplicate :: Index -> Seq a -> Seq a
+unfoldr :: (a -> Maybe (b, a)) -> a -> Seq b
+unfoldrN :: Index -> (a -> Maybe (b, a)) -> a -> (Seq b, Maybe a)
+
+take :: Index -> Seq a -> Seq a
+takeEnd :: Index -> Seq a -> Seq a
+drop :: Index -> Seq a -> Seq a
+dropEnd :: Index -> Seq a -> Seq a
+
+splitAt :: Index -> Seq a -> (Seq a, Seq a)
+takeWhile :: (a -> Bool) -> Seq a -> Seq a
+takeWhileEnd :: (a -> Bool) -> Seq a -> Seq a
+dropWhile :: (a -> Bool) -> Seq a -> Seq a
+dropWhileEnd :: (a -> Bool) -> Seq a -> Seq a
+span :: (a -> Bool) -> Seq a -> (Seq a, Seq a)
+spanEnd :: (a -> Bool) -> Seq a -> (Seq a, Seq a)
+break :: (a -> Bool) -> Seq a -> (Seq a, Seq a)
+breakEnd :: (a -> Bool) -> Seq a -> (Seq a, Seq a)
+
+breakOn :: Eq a => Seq a -> Seq a -> (Seq a, Seq a)
+breakOnEnd :: Eq a => Seq a -> Seq a -> (Seq a, Seq a)
+
+group :: Eq a => Seq a -> Seq (Seq a)
+groupBy :: (a -> a -> Bool) -> Seq a -> Seq (Seq a)
+
+inits :: Eq a => Seq a -> Seq (Seq a)
+tails :: Eq a => Seq a -> Seq (Seq a)
+
+splitOn :: Eq a => Seq a -> Seq a -> [Seq a]
+splitWhen :: (a -> Bool) -> Seq a -> [Seq a]
+
+chunksOf :: Index -> Seq a -> Seq (Seq a)
+
+isPrefixOf :: Eq a => Seq a -> Seq a -> Bool
+isSuffixOf :: Eq a => Seq a -> Seq a -> Bool
+isInfixOf :: Eq a => Seq a -> Seq a -> Bool
+
+stripPrefix :: Eq a => Seq a -> Seq a -> Maybe (Seq a)
+stripSuffix :: Eq a => Seq a -> Seq a -> Maybe (Seq a)
+commonPrefixes :: Eq a => Seq a -> Seq a -> Maybe (Seq a, Seq a, Seq a)
+
+elem :: Eq a => a -> Seq a -> Bool
+notElem :: Eq a => a -> Seq a -> Bool
+find :: (a -> Bool) -> Seq a -> Maybe a
+filter :: (a -> Bool) -> Seq a -> Seq a
+partition :: (a -> Bool) -> Seq a -> (Seq a, Seq a)
+breakOnAll :: Seq a -> Seq a -> [(Seq a, Seq a)]
+
+index :: Seq a -> Index -> a
+elemIndex :: Eq a => a -> Seq a -> Maybe Index
+elemIndices :: Eq a => a -> Seq a -> [Index]
+elemIndexEnd :: Eq a => a -> Seq a -> Maybe Index
+elemCount :: Eq a => a -> Seq a -> Index
+findIndex :: (a -> Bool) -> Seq a -> Maybe Index
+findIndices :: (a -> Bool) -> Seq a -> [Index]
+
+zip :: Seq a -> Seq b -> Seq (a, b)
+zipWith :: (a -> b -> c) -> Seq a -> Seq b -> Seq c
+unzip :: Seq (a, b) -> (Seq a, Seq b)
+
+sort :: Ord a => Seq a -> Seq a
+copy :: Seq a -> Seq a
+
+nub :: Eq a => Seq a -> Seq a
+delete :: Eq a => a -> Seq a -> Seq a
